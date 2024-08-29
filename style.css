@@ -1,0 +1,77 @@
+/* Kleuren gebaseerd op de Curio-huisstijl */
+:root {
+    --curio-pink: #E91E63;
+    --curio-dark-blue: #002F6C;
+    --curio-light-pink: #FFC0CB;
+    --curio-white: #FFFFFF;
+    --curio-background: #F4F4F4;
+    --curio-footer-bg: #002F6C;
+}
+
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--curio-background);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--curio-dark-blue);
+}
+
+header {
+    background-color: var(--curio-pink);
+    color: var(--curio-white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px; /* Pas de grootte van het logo aan naar wens */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--curio-white);
+    font-weight: bold;
+    background-color: var(--curio-pink); /* Zelfde kleur als de header */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--curio-dark-blue); /* Kleur verandert naar donkerblauw bij hover */
+    color: var(--curio-white);
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--curio-white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: var(--curio-footer-bg);
+    color: var(--curio-white);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}

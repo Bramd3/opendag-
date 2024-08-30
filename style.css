@@ -25,10 +25,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 1000;
 }
 
 header .logo img {
-    height: 50px; /* Pas de grootte van het logo aan naar wens */
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-left: 0; /* Zorg ervoor dat er geen margin aan de nav zelf is */
+    padding-left: 20px; /* Voeg padding toe om de nav naar links te verplaatsen */
 }
 
 nav ul {
@@ -47,19 +59,19 @@ nav ul li a {
     text-decoration: none;
     color: var(--curio-white);
     font-weight: bold;
-    background-color: var(--curio-pink); /* Zelfde kleur als de header */
+    background-color: var(--curio-pink);
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: var(--curio-dark-blue); /* Kleur verandert naar donkerblauw bij hover */
+    background-color: var(--curio-dark-blue);
     color: var(--curio-white);
 }
 
 section {
-    margin: 20px;
+    margin: 80px 20px 20px 20px;
     padding: 20px;
     background-color: var(--curio-white);
     border-radius: 8px;

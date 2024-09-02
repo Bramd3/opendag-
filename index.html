@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curio Software Development</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header id="header">
@@ -13,20 +14,34 @@
                 <img src="img/curio-02-wit-logo-rgb.png" alt="Curio Logo">
             </a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#vakken">Vakken</a></li>
-                <li><a href="#rooster">Rooster</a></li>
-                <li><a href="#docenten">Docenten</a></li>
-            </ul>
-        </nav>
+        <div class="header-right">
+            <i id="modeToggle" class="fas fa-moon"></i>
+            <nav>
+                <ul>
+                    <li><a href="#vakken">Vakken</a></li>
+                    <li><a href="#rooster">Rooster</a></li>
+                    <li><a href="#docenten">Docenten</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="home">
-        <h2>Welkom bij de Software Development Opleiding</h2>
-        <p>Leer alles over onze opleiding, de vakken die we aanbieden, en maak kennis met onze docenten.</p>
-    </section>
+    <div class="hero-image">
+        <img src="img\Sanne Bas - Curio - Knipplein 11-1.jpg" alt="curio Image">
+    </div>
 
+    <section id="home">
+        <h2>Over de Opleiding Software Development</h2>
+        <p>
+            De opleiding Software Development bij Curio richt zich op het leren ontwikkelen van softwaretoepassingen. 
+            Studenten leren de basisprincipes van programmeren, werken met databases, en het ontwerpen van gebruiksvriendelijke interfaces. 
+            Daarnaast worden ze getraind in probleemoplossend denken en projectmatig werken, essentieel voor een succesvolle carrière in de IT.
+        </p>
+    
+        <h3>Programmeer- en Scripttalen die je leert:</h3>
+        <p>Python, HTML, CSS, PHP en C#</p>
+    </section>
+    
     <section id="vakken">
         <h2>Vakken</h2>
         <p>Hier vind je een overzicht van alle vakken die je in het eerste jaar krijgt.</p>
@@ -35,6 +50,9 @@
     <section id="rooster">
         <h2>Rooster</h2>
         <p>Bekijk hier hoe een standaard rooster eruitziet voor een eerstejaars student.</p>
+        <div class="rooster-image">
+            <img src="img\Rooster eerste leerjaar.png" alt="rooster Image">
+        </div>
     </section>
 
     <section id="docenten">

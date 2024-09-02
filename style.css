@@ -1,4 +1,3 @@
-/* Kleuren gebaseerd op de Curio-huisstijl */
 :root {
     --curio-pink: #E91E63;
     --curio-dark-blue: #002F6C;
@@ -6,15 +5,15 @@
     --curio-white: #FFFFFF;
     --curio-background: #F4F4F4;
     --curio-footer-bg: #002F6C;
+    --curio-logo-light: url('img/logo-light.png');
+    --curio-logo-dark: url('img/logo-dark.png');
 }
 
-/* Algemene stijlen */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--curio-background);
     margin: 0;
     padding: 0;
-    text-align: center;
     color: var(--curio-dark-blue);
 }
 
@@ -25,22 +24,27 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    transition: top 0.3s;
-    z-index: 1000;
+    flex-wrap: wrap;
 }
 
 header .logo img {
     height: 50px;
+    background-image: var(--curio-logo-light);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-nav {
+.header-right {
     display: flex;
     align-items: center;
-    margin-left: 0; /* Zorg ervoor dat er geen margin aan de nav zelf is */
-    padding-left: 20px; /* Voeg padding toe om de nav naar links te verplaatsen */
+    gap: 20px;
+}
+
+#modeToggle {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--curio-white);
 }
 
 nav ul {
@@ -70,20 +74,111 @@ nav ul li a:hover {
     color: var(--curio-white);
 }
 
+.hero-image {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.rooster-image {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.rooster-image img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 8px;
+}
 section {
-    margin: 80px 20px 20px 20px;
+    margin: 20px;
     padding: 20px;
     background-color: var(--curio-white);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 footer {
     background-color: var(--curio-footer-bg);
     color: var(--curio-white);
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
     text-align: center;
+}
+
+.dark-mode {
+    --curio-pink: #002F6C;
+    --curio-dark-blue: #E91E63;
+    --curio-light-pink: #FFC0CB;
+    --curio-white: #1e1e1e;
+    --curio-background: #333;
+    --curio-footer-bg: #E91E63;
+    --curio-logo-light: url('img/logo-dark.png');
+    --curio-logo-dark: url('img/logo-light.png');
+}
+
+.dark-mode header {
+    background-color: var(--curio-dark-blue);
+}
+
+.dark-mode #modeToggle {
+    color: var(--curio-white);
+}
+
+.dark-mode nav ul li a {
+    background-color: var(--curio-dark-blue);
+}
+
+.dark-mode nav ul li a:hover {
+    background-color: var(--curio-light-pink);
+}
+
+.dark-mode header .logo img {
+    background-image: var(--curio-logo-light);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
 }

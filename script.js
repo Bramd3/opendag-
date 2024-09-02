@@ -1,19 +1,23 @@
-// script.js
 
-let lastScrollTop = 0; // Houd de laatste scrollpositie bij
-const header = document.getElementById('header'); // Haal de header op
+let lastScrollTop = 0; 
+const header = document.getElementById('header');
 
 window.addEventListener('scroll', function() {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    const headerHeight = header.offsetHeight; // Haal de hoogte van de header op
+    const headerHeight = header.offsetHeight; 
 
     if (currentScroll > lastScrollTop) {
-        // Scroll naar beneden
-        header.style.top = `-${headerHeight}px`; // Verberg de header door de top-property naar boven te verschuiven
+        header.style.top = `-${headerHeight}px`;
     } else {
-        // Scroll naar boven
         header.style.top = "0";
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Voor mobiel scrollen
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+});
+
+const modeToggle = document.getElementById('modeToggle');
+modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    modeToggle.classList.toggle('fa-moon');
+    modeToggle.classList.toggle('fa-sun');
 });

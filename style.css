@@ -182,3 +182,76 @@ footer {
         gap: 10px;
     }
 }
+
+#docenten {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--curio-background);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#docenten h2 {
+    color: var(--curio-dark-blue);
+    margin-bottom: 20px;
+}
+
+.docenten-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.docent {
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    background-color: var(--curio-pink);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docent:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.docent-image {
+    border: 5px solid var(--curio-footer-bg); /* Randkleur van de footer */
+    border-radius: 50%; /* Ronde rand om de foto */
+    display: inline-block;
+    background-color: var(--curio-background); /* Achtergrondkleur van de afbeeldingcontainer */
+    overflow: hidden; /* Verbergt alles buiten de ronde rand */
+    width: 150px; /* Vergrote ruimte voor de foto */
+    height: 150px; /* Vergrote ruimte voor de foto */
+    margin: 0 auto 15px; /* Centreert de afbeelding in het vakje */
+}
+
+.docent-image img {
+    width: 100%; /* Foto vult de breedte van de container */
+    height: 100%; /* Foto vult de hoogte van de container */
+    border-radius: 50%; /* Zorgt ervoor dat de foto rond is */
+    object-fit: cover; /* Voorkomt dat de foto vervormt */
+}
+
+.docent p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--curio-white);
+}
+
+@media (max-width: 1024px) {
+    .docent {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .docent {
+        width: 100%;
+    }
+}

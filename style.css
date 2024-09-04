@@ -14,7 +14,7 @@ body {
     padding: 0;
     color: var(--curio-dark-blue);
     position: relative;
-    padding-top: 60px;
+    padding-top: 60px; /* Ruimte voor fixed header */
 }
 
 header {
@@ -22,34 +22,36 @@ header {
     color: var(--curio-white);
     padding: 10px 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between; /* Zorgt ervoor dat logo en header-right aan de uiteinden worden uitgelijnd */
     align-items: center;
-    flex-wrap: wrap;
     position: fixed;
     top: 0;
     width: 100%;
     transition: top 0.3s;
-    z-index: 1000;
 }
 
 header .logo img {
     height: 50px;
 }
 
-.header-right {
+header .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-left: 900px;
+    gap: 10px;
+    margin-right: 50px;
 }
 
-#modeToggle {
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--curio-white);
+header .header-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Maximale breedte van de container */
+    margin: 0 auto; /* Centreert de container in de header */
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
-nav ul {
+header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -57,11 +59,11 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
 }
 
-nav ul li a {
+header nav ul li a {
     text-decoration: none;
     color: var(--curio-white);
     font-weight: bold;
@@ -71,7 +73,7 @@ nav ul li a {
     transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     background-color: var(--curio-dark-blue);
     color: var(--curio-white);
 }
@@ -94,7 +96,9 @@ nav ul li a:hover {
 
 .rooster-image {
     display: inline-block;
-    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 8px;
     padding: 5px;
     overflow: hidden;
@@ -136,49 +140,72 @@ footer {
     background-color: var(--curio-dark-blue);
 }
 
-.dark-mode #modeToggle {
-    color: var(--curio-white);
-}
-
-.dark-mode nav ul li a {
+.dark-mode header nav ul li a {
     background-color: var(--curio-dark-blue);
 }
 
-.dark-mode nav ul li a:hover {
+.dark-mode header nav ul li a:hover {
     background-color: var(--curio-light-pink);
 }
 
+#intro {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--curio-background); /* Achtergrondkleur aangepast */
+    border-radius: 0; /* Verwijder rand-afronding */
+    margin: 20px 0; /* Verwijder extra marge boven en onder */
+    box-shadow: none; /* Verwijder box-shadow */
+}
+
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1;
+    padding: 20px;
+    max-width: 50%;
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Ronde hoeken toegevoegd */
+}
+
+.intro-text h1 {
+    font-size: 4em; /* Grotere fontgrootte voor de titel */
+    margin: 0;
+    color: var(--curio-dark-blue);
+    line-height: 1.2;
+}
+
+.intro-text p {
+    font-size: 1.25em; /* Grotere fontgrootte voor de paragraaf */
+    margin-top: 10px;
+    color: var(--curio-dark-blue);
+    line-height: 1.6;
+}
+
 @media (max-width: 768px) {
-    header {
+    .intro-content {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header-right {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0; /* Verwijdert de automatische marge aan de linkerzijde */
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        padding-left: 0;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    nav ul li a {
-        display: block;
-        width: 100%;
         text-align: center;
     }
 
-    .header-right {
-        gap: 10px;
+    .intro-text, .intro-image {
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 }
 
@@ -258,7 +285,7 @@ footer {
 #vakken {
     margin: 20px;
     padding: 20px;
-    background-color: var(--curio-background);
+    background-color: #FFFFFF;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -277,7 +304,7 @@ footer {
 }
 
 .vak {
-    background-color: #fff;
+    background-color: var(--curio-white); /* Achtergrondkleur aangepast */
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -298,31 +325,88 @@ footer {
     margin: 0;
     font-weight: bold;
     color: var(--curio-dark-blue);
-    font-size: 18px;
 }
 
-.vak-description {
-    margin: 10px 0 0;
-    font-weight: normal;
-    color: var(--curio-dark-blue);
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-@media (max-width: 1200px) {
-    .vakken-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .vakken-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .vakken-grid {
         grid-template-columns: 1fr;
     }
+}
+
+#blokken {
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#blokken h2 {
+    color: var(--curio-dark-blue);
+    margin-bottom: 20px;
+}
+
+.blokken-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.blok {
+    background-color: var(--curio-white);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blok:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.blok-content {
+    padding: 10px;
+}
+
+.blok-name {
+    margin: 0;
+    font-weight: bold;
+    color: var(--curio-dark-blue);
+}
+
+.blok-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* Ronde hoeken voor de afbeeldingen */
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding het blok vult zonder te vervormen */
+}
+
+@media (max-width: 1024px) {
+    .blokken-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .blokken-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+footer {
+    background-color: var(--curio-footer-bg);
+    color: var(--curio-white);
+    padding: 10px 0;
+    text-align: center;
 }
